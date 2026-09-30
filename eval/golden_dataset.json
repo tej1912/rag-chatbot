@@ -1,0 +1,14 @@
+[
+  {
+    "question": "What is your refund policy?",
+    "ground_truth": "We offer full refunds within 30 days of purchase, no questions asked."
+  },
+  {
+    "question": "How long does shipping take?",
+    "ground_truth": "Standard shipping takes 3-5 business days."
+  },
+  {
+    "question": "Do you ship internationally?",
+    "ground_truth": "Yes, we ship to over 40 countries; international delivery takes 7-14 business days."
+  }
+]
