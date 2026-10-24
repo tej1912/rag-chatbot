@@ -1,5 +1,5 @@
 """
-Hybrid retrieval: dense (pgvector cosine) + sparse (keyword ILIKE) results
+Hybrid retrieval: dense (pgvector cosine) + sparse (Postgres full-text search) results
 merged by reciprocal rank fusion. Reranker step is a no-op stub until
 RERANK_ENABLED=true + COHERE_API_KEY is set — flip that on once retrieval
 quality needs the extra step.

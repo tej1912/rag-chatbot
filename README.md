@@ -79,8 +79,9 @@ PDF upload: `curl.exe -X POST http://localhost:8000/v1/ingest/pdf -H "X-Admin-Ke
   The software is free; the **extra LLM call per message is not free** — by
   default it uses Groq's free tier, so it uses up your Groq rate limit twice as fast.
   Failures follow `GUARD_FAIL_MODE` (`open` = allow, `closed` = block).
-  The policy prompt lives in `backend/app/core/nemo_guard.py`; it explicitly
-  allows identity/orientation/dating topics so LGBTQ+ users aren't over-blocked.
+  The policy prompt lives in `backend/app/core/nemo_guard.py`; it is built from
+  the `BOT_COMPANY_NAME` / `BOT_COMPANY_SUMMARY` settings so on-topic questions
+  about your products are never over-blocked.
   Only the current message is checked, not multi-turn attack chains.
 
 ## Deploy checklist (Railway / Render / Fly)

@@ -8,7 +8,7 @@ from sqlalchemy import text
 
 from app.api import chat, health, ingest
 from app.config import DEV_SESSION_SECRET, settings
-from app.core import nemo_guard
+from app.core import nemo_guard, tracing
 from app.db import models  # noqa: F401  (registers tables on Base.metadata)
 from app.db.session import Base, engine
 
@@ -73,6 +73,7 @@ async def lifespan(app: FastAPI):
         settings.embedding_provider,
     )
     yield
+    tracing.flush()
 
 
 app = FastAPI(

@@ -111,10 +111,12 @@ URL) **replaces** the previous version instead of creating a duplicate.
 
 ## 4. Reusing this for a different website
 
-Nothing in the code is HelloQ-specific except the NeMo guardrail's policy
-prompt (`nemo_guard.py`), which currently says "the customer-support
-assistant of a dating app" - edit that one sentence to describe the new
-site, or make it generic ("a company's customer-support assistant").
+The deployment's identity lives in three env variables - `BOT_COMPANY_NAME`,
+`BOT_TOPICS`, `BOT_COMPANY_SUMMARY` (see `.env.example`). They drive the
+refusal message, greeting, system prompt and the NeMo guardrail policy.
+Currently set for **SmartBusiness Solutions** (Check Printing and Time &
+Attendance). For another site: change those three, set the widget `title` /
+`welcome`, and ingest that site's documents.
 Everything else - chunking, retrieval, the widget, the API - has no
 knowledge of what content it's serving.
 

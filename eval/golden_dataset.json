@@ -1,14 +1,26 @@
 [
   {
-    "question": "What is your refund policy?",
-    "ground_truth": "We offer full refunds within 30 days of purchase, no questions asked."
+    "question": "What products does SmartBusiness Solutions offer?",
+    "ground_truth": "Check Printing, and Time and Attendance."
   },
   {
-    "question": "How long does shipping take?",
-    "ground_truth": "Standard shipping takes 3-5 business days."
+    "question": "Can different people create, approve and print a check?",
+    "ground_truth": "Yes. Creating, approving and printing a check can be assigned to different people through permissions."
   },
   {
-    "question": "Do you ship internationally?",
-    "ground_truth": "Yes, we ship to over 40 countries; international delivery takes 7-14 business days."
+    "question": "Are full bank account numbers shown in the application?",
+    "ground_truth": "No. Bank account details are encrypted in storage and masked in normal screens and responses."
+  },
+  {
+    "question": "How does attendance use location?",
+    "ground_truth": "When geofencing is configured, the system compares the employee's reported location with the workspace's allowed area to flag on-site, late or out-of-area punches."
+  },
+  {
+    "question": "Do I need separate logins for each product?",
+    "ground_truth": "No. Both products use one shared organization account foundation."
+  },
+  {
+    "question": "Is camera verification for attendance certified identity proof?",
+    "ground_truth": "No. The facial liveness checks are software-based safeguards, not certified identity proof or a guarantee against every spoofing attempt."
   }
 ]

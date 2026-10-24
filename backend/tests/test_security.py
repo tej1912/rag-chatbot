@@ -77,6 +77,6 @@ def test_production_config_validation(monkeypatch):
     assert len(problems) == 3
     monkeypatch.setattr(settings, "admin_api_key", "x" * 30)
     monkeypatch.setattr(settings, "session_secret", "y" * 40)
-    monkeypatch.setattr(settings, "cors_origins", "https://thehelloq.com, https://www.thehelloq.com")
+    monkeypatch.setattr(settings, "cors_origins", "https://example.com, https://www.example.com")
     assert settings.production_problems() == []
-    assert settings.cors_origin_list == ["https://thehelloq.com", "https://www.thehelloq.com"]
+    assert settings.cors_origin_list == ["https://example.com", "https://www.example.com"]

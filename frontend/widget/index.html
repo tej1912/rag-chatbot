@@ -2,11 +2,11 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <title>Your Site — Chat Assistant Demo</title>
+  <title>SmartBusiness Solutions — Chat Assistant Demo</title>
   <link rel="stylesheet" href="widget.css" />
 </head>
 <body>
-  <h1>Your Website</h1>
+  <h1>SmartBusiness Solutions</h1>
   <p>This page simulates your existing site. The chat widget below embeds
      the same way it would on your real site — via the script tag at the
      bottom of this file.</p>
@@ -18,6 +18,21 @@
     window.RAG_CHAT_CONFIG = {
       apiBase: "http://localhost:8000",
       category: null,
+      title: "SmartBusiness Assistant",
+      subtitle: "Live Concierge \u2022 < 2m reply",
+      welcome: "Hello! Welcome to SmartBusiness Solutions. How can I help you with high-volume check printing, bank compliance, or Clock In / Clock Out attendance today?",
+      suggestions: [
+        "How does batch check printing & dispatch work?",
+        "Tell me about Clock In Clock Out attendance",
+        "Are checks compliant with Federal Reserve MICR standards?",
+        "What are the pricing tiers for high volume?"
+      ],
+      badge: "Federal Reserve Check 21 & MICR Certified",   // only keep claims that are true
+      badgeLinkText: "Plans",
+      badgeLinkUrl: "https://example.com/plans",             // replace with your real pricing page
+      placeholder: "Ask about check printing, clock in/out...",
+      accent: "#5b3fd9",
+      // logo: "https://your-site.com/logo.png",
       debug: true            // dev only: logs retrieved chunks in the browser console
       // turnstileSiteKey: "0x4AAAA..."  // optional: Cloudflare Turnstile PUBLIC site key
     };

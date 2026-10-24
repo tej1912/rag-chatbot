@@ -8,7 +8,7 @@ from collections.abc import Iterator
 
 from app.config import settings
 
-SYSTEM_PROMPT = """You are a helpful support assistant embedded on a company website.
+SYSTEM_PROMPT = f"""You are the support assistant for {settings.bot_company_name} ({settings.bot_topics}), embedded on its website.
 Answer ONLY using the provided context. If the context doesn't contain the
 answer, say you're not sure and offer to connect the user with support —
 never invent an answer.

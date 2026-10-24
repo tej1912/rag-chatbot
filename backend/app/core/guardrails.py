@@ -1,9 +1,10 @@
 """
-Lightweight guardrail layer. This is a heuristic stand-in — swap in real
-NeMo Guardrails (self-host, free, open-source) rails config for production;
-keep this module's function signatures so chat_service.py doesn't change.
+Layer 1 guardrails: free, instant regex checks (injection, PII, length) plus
+smalltalk replies. Runs BEFORE the optional NeMo LLM check (nemo_guard.py).
 """
 import re
+
+from app.config import settings
 
 INJECTION_PATTERNS = [
     # "ignore / disregard / forget (all|any|the|your) (previous|prior|above) instructions|rules|prompt"
@@ -62,7 +63,10 @@ _BYE_RE = re.compile(r"^\s*(bye+|goodbye|see you|cya)\W*$", re.I)
 
 def smalltalk_reply(text: str) -> str | None:
     if _GREETING_RE.match(text):
-        return "Hi! I can answer questions about HelloQ - plans and pricing, features, safety and privacy. What would you like to know?"
+        return (
+            f"Hi! I can answer questions about {settings.bot_company_name} - {settings.bot_topics}. "
+            "What would you like to know?"
+        )
     if _THANKS_RE.match(text):
         return "You're welcome! Let me know if there's anything else I can help with."
     if _BYE_RE.match(text):

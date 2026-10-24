@@ -87,7 +87,7 @@ def test_regex_injection_blocked_before_any_work(env):
 def test_smalltalk_is_free(env):
     calls, _ = env
     out, _ = run("hi")
-    assert len(out) == 1 and "HelloQ" in out[0]
+    assert len(out) == 1 and settings.bot_company_name in out[0]
     assert calls["embed"] == [] and calls["stream"] == []
 
 

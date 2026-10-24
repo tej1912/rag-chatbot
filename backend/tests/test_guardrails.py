@@ -25,7 +25,7 @@ def test_regex_blocks_obvious_attacks(attack):
         "What's included in the free plan?",
         "Can I hide my pronouns on my profile?",
         "How do I report someone?",
-        "tell about helloq",
+        "tell about check printing",
     ],
 )
 def test_regex_allows_normal_questions(normal):

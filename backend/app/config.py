@@ -55,11 +55,23 @@ class Settings(BaseSettings):
     # (regex already passed), "closed" = block it.
     guard_fail_mode: str = "open"
 
+    # Branding - the only place a deployment's identity lives. Used in the
+    # refusal message, greeting, system prompt and NeMo guard policy.
+    bot_company_name: str = "SmartBusiness Solutions"
+    bot_topics: str = "Check Printing and Time & Attendance"
+    bot_company_summary: str = (
+        "a business software company whose products are Check Printing "
+        "(prepare, approve and print business checks) and Time and Attendance "
+        "(employee clock-in/out, geofencing, attendance reports)"
+    )
+
     # Observability
     langfuse_enabled: bool = False
     langfuse_public_key: str = ""
     langfuse_secret_key: str = ""
     langfuse_host: str = "https://cloud.langfuse.com"
+    # false -> send only metadata (no visitor question / bot answer text)
+    langfuse_capture_content: bool = True
 
     # App / security
     app_env: str = "development"

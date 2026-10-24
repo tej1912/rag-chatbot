@@ -1,0 +1,5 @@
+fall back
+ui
+Admin dashboard for cost,
+
+Human handoff: the bot says “connect you with support”, but there is no real link, email or ticket
